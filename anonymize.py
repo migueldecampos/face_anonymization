@@ -28,9 +28,12 @@ replace_faces = functools.partial(anonymize_faces, filter=inpaint)
 
 
 if __name__ == "__main__":
+    import sys
     from PIL import Image
 
-    image = Image.open("images/big_friends.jpg")
-
-    anonymized_image = replace_faces(image)
-    anonymized_image.save("images/big_friends_output.jpg")
+    if len(sys.argv) == 3 and sys.argv[1].lower() in ("blur", "inpaint"):
+        image = Image.open(sys.argv[2])
+        anonymized_image = replace_faces(image)
+        anonymized_image.save(sys.argv[2][:-4] + "_output.jpg")
+    else:
+        print("python anonymize.py blur|inpaint <path to your image>")

@@ -30,7 +30,7 @@ replace_faces = functools.partial(anonymize_faces, filter=inpaint)
 if __name__ == "__main__":
     from PIL import Image
 
-    image = Image.open("images/small_friends.jpg")
+    image = Image.open("images/big_friends.jpg")
 
     anonymized_image = replace_faces(image)
-    anonymized_image.save("images/small_friends_output.jpg")
+    anonymized_image.save("images/big_friends_output.jpg")

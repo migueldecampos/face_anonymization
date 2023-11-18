@@ -33,7 +33,7 @@ def get_faces_from_image(image):
             fill="white",
             corners=(True, True, True, True),
         )
-        masks.append(mask)
+        masks.append((mask, top_left_corner, bottom_right_corner))
 
     return masks
 

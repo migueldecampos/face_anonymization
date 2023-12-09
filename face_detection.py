@@ -39,10 +39,10 @@ def get_faces_from_image(image):
 
 
 if __name__ == "__main__":
-    image = Image.open("images/small_friends.jpg")
+    image = Image.open("examples/friends.jpg")
 
     masks = get_faces_from_image(image)
 
     print(len(masks))
     for i, mask in enumerate(masks):
-        mask.save("images/small_friends_mask{}.jpg".format(i))
+        mask.save("examples/friends_mask{}.jpg".format(i))

@@ -33,7 +33,11 @@ if __name__ == "__main__":
 
     if len(sys.argv) == 3 and sys.argv[1].lower() in ("blur", "inpaint"):
         image = Image.open(sys.argv[2])
-        anonymized_image = replace_faces(image)
-        anonymized_image.save(sys.argv[2][:-4] + "_output.jpg")
+        if sys.argv[1].lower() == "inpaint":
+            anonymized_image = replace_faces(image)
+        else:
+            anonymized_image = blur_faces(image)
+
+        anonymized_image.save(sys.argv[2][:-4] + "_{}.jpg".format(sys.argv[1].lower()))
     else:
         print("python anonymize.py blur|inpaint <path to your image>")

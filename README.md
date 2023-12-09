@@ -1,6 +1,6 @@
 # Face Anonymization
 
-This repo contains a simple image anonymization suite. It supports blurring including blurring of faces and inpainting of new faces using diffusion, as well as blurring of license plates.
+This repo contains a simple image anonymization suite. It supports blurring faces, inpainting new faces using diffusion, and blurring license plates.
 
 
 

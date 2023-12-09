@@ -75,7 +75,7 @@ if __name__ == "__main__":
                 print(FACES_COMMAND)
         else:
             mode = "blur"
-            with open(sys.argv[2].lower(), "rb") as p:
+            with open(sys.argv[2], "rb") as p:
                 model = pickle.load(p)
             anonymized_image = anonymize_license_plates(
                 model=model, image_path=sys.argv[3]
